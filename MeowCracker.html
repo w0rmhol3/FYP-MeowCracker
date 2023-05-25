@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<HTML>
+    <head>
+        <title>MeowCracker - Online HashCat Command Generator</title>   
+        <!--External JS and CSS-->
+        <script src="main.js"></script>
+        <link rel="stylesheet" href="main.css">
+
+        <!--Font Family-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik+Puddles&display=swap" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Rubik+Puddles&display=swap" rel="stylesheet">
+    
+    </head>
+    <body>
+        <div class = "Top-box"> 
+            <h1 class = "Title-font">MeowCracker: <br> HashCat Command Generator</h1>
+        </div>
+
+        <div class = "Main-box">
+            
+            <!-- Tab links -->
+            <div class="Main-tab">
+                <button class="Tablinks active" onclick="openTab(event, 'Command-Generator')">Command Generator</button>
+                <button class="Tablinks" onclick="openTab(event, 'Hashes')">Hashes</button>
+                <button class="Tablinks" onclick="openTab(event, 'Tutorial')">Tutorial</button>
+            </div>
+            
+            <!-- Tab content -->
+            <div class = Content-box-1>
+                
+                <!--Command Generator Tab-->
+                <div id="Command-Generator" class="Tabcontent active">
+
+                    <!--The Command Generator for Straight Attack Mode of HashCat-->
+                    <h1>
+                        <u>HashCat: Straight Attack (Option 0)</u>
+                    </h1>
+
+                    <h3>
+                        The HashCat Straight Attack mode is the most direct way to use HashCat. 
+                        It will run a brute force Attack on the targeted hash file provided until it finds a match. 
+                        It only requires 3 things:
+                    </h3>
+                    
+                    
+                    <h2>
+                        1. Please Choose the Type of Hash to Crack: 
+                    </h2>
+
+                    <!--Dropdown list of Hashes to let user select from-->
+                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown">
+                        <option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "300">300 - MySQL4.1/MySQL5</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "500">500 - UNIX Crypt</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "900">900 - MD4</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "1300">1300 - SHA224</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "1400">1400 - SHA256</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "1700">1700 - SHA512</option>   
+                        <option class = "Hash-items" class = "custom-selection" value = "3000">3000 - LM</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "7500">7500 - Kerberos 5</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "10800">10800 - SHA384</option>                         
+                        <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 1</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 2</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "13711">13711 - VeraCrypt</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "14000">14000 - DES(PT = $salt, key = $pass)8</option>
+                        <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>                 
+                    </select>
+                    <br>
+                    <br>
+                    
+                    
+
+                    <h2>
+                        2. Please Provide the Hash File Name: 
+                    </h2>
+
+                    <!--Input box for Name of Hash File-->
+                    <label for="Inputbox" class="Inputbox">
+                        <input type="text" id="HashFile" placeholder="&nbsp;">
+                        <span class="label">Hash.txt</span>
+                    </label>
+                    <br>
+                    <br>
+
+                    <h2>
+                        3. Please Provide the Wordlists Name: 
+                    </h2>
+
+                    <!--Input box for Wordlist-->
+                    <label for="Inputbox" class="Inputbox">
+                        <input type="text" id="Wordlist" placeholder="&nbsp;">
+                        <span class="label">Wordlist.txt</span>
+                    </label>
+
+                    <h2>
+                        Command Generation:
+                    </h2>
+
+                    <!--Generate command for straight attack mode-->
+                    <div class = "Command-box">
+                        <center>
+                            <p id = "Straight-Attack">
+                                HashCat -a 0 -m *hash val* -o staightattack.txt \ *Hash file* *wordlist*
+                            </p>
+                        </center>
+                    </div>
+
+
+
+
+                </div>
+                
+                <!--Hashes Tab-->
+                <div id="Hashes" class="Tabcontent">
+                    <h1>
+                        <u>This is the entire list of Hashes that is supported by HashCat:</u>
+                    </h1>
+                    
+                </div>
+                
+                <!--Tutorial Tab-->
+                <div id="Tutorial" class="Tabcontent">
+                    <h1>
+                        <u>What Is MeowCracker?</u>
+                    </h1>
+
+                    <h2>
+                        MeowCracker is a HashCat command generator that was created by w0rmhol3. 
+                        Its main existence is to ease the usage of Hashcat password cracking tool by generating the required commands to run password cracking functionalities through an online website that can allow users to choose the password cracking mode and generate the required commands that initiates the cracking process.
+                    </h2>
+                    <br>
+                    <br>
+
+
+                    <h1>
+                        <u>Who Is It For?</u>
+                    </h1>
+
+                    <h2>
+                        This tool is mainly created for cybersecurity practitioners. With that said, the main target user of the tool is to be cybersecurity professionals, and students. 
+                        The tool will be able to assist these users in cracking passwords and learning the tool through the commands generated through the website. Publishing this tool as a web-based tool enables it to be access by the general public, making it a free-to-use and accessible by everyone.
+                    </h2>
+                    <br>
+                    <br>
+
+
+                    <h1>
+                        <u>How To Utilize The Command Generator?</u>
+                    </h1>
+
+                    <h2>
+                        Based on the requirements of the hash to be cracked, users can go through the tool and follow the required criteria to fill in and the tool will automatically generate the full command to allow HashCat to run.
+                        Then, just click on the copy button to copy the code directly, and paste it in the linux terminal to run the password cracking process through HashCat.
+                    </h2>
+                    <br>
+                    <br>
+
+                    
+                </div>
+            </div>
+        </div>
+        
+        <a class = "bottom-text">
+            *MeowCracker uses the default directory of the wordlist located in /usr/share/wordlists/
+        </a>
+        <br>
+        <a class = "bottom-text">
+            *If you had relocated the wordlists in a different path, remember to change the directory when you pasted the command.
+        </a>
+    </body>
+</HTML>
