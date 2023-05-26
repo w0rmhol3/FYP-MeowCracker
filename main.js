@@ -30,4 +30,13 @@ function openTab(evt, Tab) {
     evt.currentTarget.className += " active";
   }
 
-
+  
+  function copy_Command() {
+    let text = document.getElementById('Straight-Attack').innerHTML;
+    try {
+      navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
