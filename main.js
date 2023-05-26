@@ -5,7 +5,7 @@ function update_command(){
   var wordlist = document.getElementById('Wordlist').value;
   const outputElement = document.getElementById('Straight-Attack');
   
-  outputElement.textContent = "HashCat -a 0 -m "+ hash_type + file_input + " -o StraightAttack.txt " + wordlist;
+  outputElement.textContent = "HashCat -a 0 -m "+ hash_type + " " + file_input + " -o StraightAttack.txt /usr/share/wordlists/" + wordlist;
 }
 
 //Function to switch the tabs within the website
