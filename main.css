@@ -175,8 +175,40 @@ border-radius: 20px;
     border: 1px solid white;
     border-radius: 20px;
     width: 1350px;
+    height: 90px;
 }
 
 #Straight-Attack{
     font-size: 25px;
 }
+
+.fa-solid{
+    color:#545151;
+    font-size: 25px;
+}
+
+.CopyBtn1{
+    position: absolute;
+    background-color: none;
+    border: 1px solid white;
+    border-top-right-radius : 20px;
+    border-bottom-right-radius: 20px;
+    height:91px;
+    width: 90px;
+    margin-left: 1261px;
+    margin-top: -91px;
+}
+
+.CopyBtn1:hover{
+    background-color: #A7A076;
+    transition: .25s ease-in-out; 
+    cursor: pointer;
+}
+
+.CopyBtn1:active{
+    background-color: #7b7a76;
+    cursor: pointer;
+}
+
+
+
