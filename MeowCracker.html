@@ -3,7 +3,6 @@
     <head>
         <title>MeowCracker - Online HashCat Command Generator</title>   
         <!--External JS and CSS-->
-        <script src="main.js"></script>
         <link rel="stylesheet" href="main.css">
 
         <!--Font Family-->
@@ -52,7 +51,7 @@
                     </h2>
 
                     <!--Dropdown list of Hashes to let user select from-->
-                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown">
+                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown" onclick="javascript:update_command()">
                         <option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
                         <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
                         <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
@@ -82,7 +81,7 @@
 
                     <!--Input box for Name of Hash File-->
                     <label for="Inputbox" class="Inputbox">
-                        <input type="text" id="HashFile" placeholder="&nbsp;">
+                        <input type="text" id="HashFile" placeholder="&nbsp;" onkeyup="javascript:update_command()">
                         <span class="label">Hash.txt</span>
                     </label>
                     <br>
@@ -94,7 +93,7 @@
 
                     <!--Input box for Wordlist-->
                     <label for="Inputbox" class="Inputbox">
-                        <input type="text" id="Wordlist" placeholder="&nbsp;">
+                        <input type="text" id="Wordlist" placeholder="&nbsp;" onkeyup="javascript:update_command()">
                         <span class="label">Wordlist.txt</span>
                     </label>
 
@@ -173,5 +172,7 @@
         <a class = "bottom-text">
             *If you had relocated the wordlists in a different path, remember to change the directory when you pasted the command.
         </a>
+        
+        <script src="main.js"></script>
     </body>
 </HTML>

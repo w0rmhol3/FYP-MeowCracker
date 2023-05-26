@@ -1,21 +1,12 @@
-window.onload = function() {
-    const HashinputField = document.getElementById('HashTypeDropdown');
-    const FileinputField = document.getElementById('HashFile');
-    const WordlistinputField = document.getElementById('Wordlist');
-    const outputElement = document.getElementById('Straight-Attack');
+function update_command(){
+  console.log("Reach");
+  var hash_type = document.getElementById('HashTypeDropdown').value;
+  var file_input = document.getElementById('HashFile').value;
+  var wordlist = document.getElementById('Wordlist').value;
+  const outputElement = document.getElementById('Straight-Attack');
   
-    HashinputField.addEventListener('input', () => {
-        outputElement.textContent = "HashCat -a 0 -m " + HashinputField + " -o StraightAttack.txt \\\ " + FileinputField.value + "";
-      });
-
-    FileinputField.addEventListener('input', () => {
-      outputElement.textContent = "HashCat -a 0 -m " + HashinputField +" -o StraightAttack.txt \\\ " + FileinputField.value + "";
-    });
-
-    WordlistinputField.addEventListener('input', () => {
-        outputElement.textContent = "HashCat -a 0 -m " + HashinputField +" -o StraightAttack.txt \\\ " + FileinputField.value + " " + WordlistinputField + "";
-      });
-  }
+  outputElement.textContent = "HashCat -a "+hash_type +" -m " + file_input + " -o StraightAttack.txt \\\ " + wordlist;
+}
 
 //Function to switch the tabs within the website
 function openTab(evt, Tab) {
