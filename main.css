@@ -1,12 +1,41 @@
+:root,
+:root.dark{
+    --body-bg:black;
+    --font-color: #C3C1C1; 
+    --box-bg: #2B2A2A;
+    --box-border: 5px solid white;
+    --tab-color: #545151;
+    --tab-hover-active-color: #A7A076;
+    --copy-hover-color: #A7A076;
+    --copy-active-color: #7b7a76;
+    --copy-box: 1px solid white;
+    --copy-btn-bg: white;
+    --icon-color: #454029;
+}
+
+:root.light{
+    --body-bg:#eeeae0;
+    --font-color: black; 
+    --box-bg: #f5eb84;
+    --box-border: 5px solid #a89e27;
+    --tab-color: #a89e27;
+    --tab-hover-active-color: yellow;
+    --copy-hover-color: #aa9f28;
+    --copy-active-color: #575217;
+    --copy-box: 1px solid #5e5a31;
+    --copy-btn-bg: #5e5a31;
+    --icon-color: #dbce40;
+}
+
 body {
-    background-color: black;
-    color: #C3C1C1;
+    background-color: var(--body-bg);
+    color: var(--font-color);
 }
 
 .Top-box{
-    background-color: #2B2A2A;
+    background-color: var(--box-bg);
     width: 1400px;
-    border: 5px solid white;
+    border: var(--box-border);
     border-radius: 20px;
     padding: 10px;
     margin: 20px;
@@ -19,7 +48,7 @@ body {
 }
 
 .Main-box{
-    background-color: #2B2A2A;
+    background-color: var(--box-bg);
     width: 1400px;
     height: 800px;
     border-radius: 20px;
@@ -35,7 +64,7 @@ body {
     margin-left: -10px;
     margin-top: -11px;
     width: 1420px;
-    background-color: #545151;
+    background-color: var(--tab-color);
 }
 
 .Main-tab button{
@@ -44,15 +73,15 @@ body {
 }
 
 .Main-tab button:hover{
-    background-color: #A7A076;
+    background-color: var(--tab-hover-active-color);
 }
 
 .Main-tab button.active{
-    background-color: #A7A076;
+    background-color: var(--tab-hover-active-color);
 }
 
 .Tablinks{
-    background-color: #545151;
+    background-color: var(--tab-color);
     float: left;
     border: none;
     border-top-left-radius: 20px;
@@ -61,11 +90,11 @@ body {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    color:#C3C1C1;
+    color:var(--font-color);
   }
 
 .Tablinks :active{
-    background-color: #A7A076;
+    background-color: var(--tab-hover-active-color);
     float: left;
     border: none;
     border-top-left-radius: 20px;
@@ -73,7 +102,7 @@ body {
     cursor: pointer;
     padding: 14px 16px;
     transition: 0.3s;
-    color:#C3C1C1;
+    color: var(--font-color);
   }
 
 /*Dark and Light mode switch */
@@ -241,7 +270,7 @@ border-radius: 20px;
 }
 
 .Command-box{
-    border: 1px solid white;
+    border: var(--copy-box);
     border-radius: 20px;
     width: 1350px;
     height: 90px;
@@ -252,14 +281,14 @@ border-radius: 20px;
 }
 
 .fa-solid{
-    color:#545151;
+    color: var(--icon-color);
     font-size: 25px;
 }
 
 .CopyBtn1{
     position: absolute;
-    background-color: none;
-    border: 1px solid white;
+    background-color: var(--copy-btn-bg);
+    border: var(--copy-box);
     border-top-right-radius : 20px;
     border-bottom-right-radius: 20px;
     height:91px;
@@ -269,18 +298,18 @@ border-radius: 20px;
 }
 
 .CopyBtn1:hover{
-    background-color: #A7A076;
+    background-color: var(--copy-hover-color);
     transition: .25s ease-in-out; 
     cursor: pointer;
 }
 
 .CopyBtn1:active{
-    background-color: #7b7a76;
+    background-color: var(--copy-active-color);
     cursor: pointer;
 }
 
 .Content-box-2{
-    background-color: #2B2A2A;
+    background-color: var(--box-bg);
     width: 1400px;
     height: 630px;
     border-radius: 20px;

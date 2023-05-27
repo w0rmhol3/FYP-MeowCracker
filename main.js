@@ -4,10 +4,14 @@ function SwitchMode() {
 
   
   if (lswitch.checked == true){
-    document.body.style.backgroundColor = "#D2D2D1";
+    document.documentElement.classList.remove("dark")
+    document.documentElement.classList.add("light")
+    window.localStorage.setItem('mode', 'light');
 
   }else{
-    document.body.style.backgroundColor = "black";
+    document.documentElement.classList.remove("light")
+    document.documentElement.classList.add("dark")
+    window.localStorage.setItem('mode', 'dark');
   }
 
 }
