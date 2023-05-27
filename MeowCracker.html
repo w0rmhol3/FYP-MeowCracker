@@ -30,7 +30,7 @@
                 <button class="Tablinks" onclick="openTab(event, 'Tutorial')">Tutorial</button>
             </div>
             
-            <!-- Tab contents -->
+            <!-- Tab contents: Start of Straight Attack Content -->
             <div class = Content-box-1>
                 
                 <!--Command Generator Tab-->
@@ -107,7 +107,7 @@
                     <div class = "Command-box">
                         <center>
                             <p id = "Straight-Attack">
-                                HashCat -a 0 -m *hash val* -o staightattack.txt *Hash file* *wordlist.txt*
+                                HashCat -a 0 -m *hash value* -o staightattack.txt *Hash file* *wordlist.txt*
                             </p>
                         </center>
                     </div>
@@ -116,9 +116,90 @@
                         <button class = "CopyBtn1" onclick="copy_Command()"><i class="fa-solid fa-copy"></i></button>
                     </div>
 
+                    <!--Start of Brute Force Attack Content-->
+                    <div class = Content-box-2>
+                        <h1>
+                            <u>HashCat: Brute Force Attack (Option 3)</u>
+                        </h1>
+    
+                        <h3>
+                            The HashCat Brute Force Attack mode is an attack in which HashCat will go through all the possible combination to crack the hash. 
+                            By running attack mode 3 HashCat will try to crack the hash provided in a text file. 
+                            <br>
+                            Here are the required details:
+                        </h3>
+                        
+                        
+                        <h2>
+                            1. Please Choose the Type of Hash to Crack: 
+                        </h2>
+    
+                        <!--Dropdown list of Hashes to let user select from-->
+                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick="javascript:update_command2()">
+                            <option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "300">300 - MySQL4.1/MySQL5</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "500">500 - UNIX Crypt</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "900">900 - MD4</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "1300">1300 - SHA224</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "1400">1400 - SHA256</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "1700">1700 - SHA512</option>   
+                            <option class = "Hash-items" class = "custom-selection" value = "3000">3000 - LM</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "7500">7500 - Kerberos 5</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "10800">10800 - SHA384</option>                         
+                            <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 1</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 2</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "13711">13711 - VeraCrypt</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "14000">14000 - DES(PT = $salt, key = $pass)8</option>
+                            <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>                 
+                        </select>
+                        <br>
+                        <br>
+                        
+                        
+    
+                        <h2>
+                            2. Please Provide the Hash File Name: 
+                        </h2>
+    
+                        <!--Input box for Name of Hash File-->
+                        <label for="Inputbox" class="Inputbox">
+                            <input type="text" id="HashFile2" placeholder="&nbsp;" onkeyup="javascript:update_command2()">
+                            <span class="label">Hash.txt</span>
+                        </label>
+
+                        <h2>
+                            Command Generation:
+                        </h2>
+
+                        <div class = "Command-box">
+                            <center>
+                                <p id = "BruteForce-Attack">
+                                    HashCat -a 3 -m *hash value* *Hash file*
+                                </p>
+                            </center>
+                        </div>
+
+                        <div class = "CopyBox1">
+                            <button class = "CopyBtn1" onclick="copy_Command2()"><i class="fa-solid fa-copy"></i></button>
+                        </div>
+
+                    </div>
+
+                    
 
 
 
+
+                    <!--Clarification Text-->
+                    <a class = "bottom-text">
+                        *MeowCracker uses the default directory of the wordlist located in /usr/share/wordlists/
+                    </a>
+                    <br>
+                    <a class = "bottom-text">
+                        *If you had relocated the wordlists in a different path, remember to change the directory when you pasted the command.
+                    </a>
 
                 </div>
                 
@@ -170,16 +251,7 @@
                     
                 </div>
             </div>
-        </div>
-        
-        <a class = "bottom-text">
-            *MeowCracker uses the default directory of the wordlist located in /usr/share/wordlists/
-        </a>
-        <br>
-        <a class = "bottom-text">
-            *If you had relocated the wordlists in a different path, remember to change the directory when you pasted the command.
-        </a>
-        
+        </div>        
         
     </body>
 </HTML>

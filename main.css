@@ -167,7 +167,7 @@ transform-origin: left;
     outline: none;
     box-shadow: inset 0 -2px 0 yellow; 
 }
-#HashFile, #Wordlist{
+#HashFile, #HashFile2, #Wordlist{
 border-radius: 20px;
 }
 
@@ -178,7 +178,7 @@ border-radius: 20px;
     height: 90px;
 }
 
-#Straight-Attack{
+#Straight-Attack, #BruteForce-Attack{
     font-size: 25px;
 }
 
@@ -210,5 +210,18 @@ border-radius: 20px;
     cursor: pointer;
 }
 
+.Content-box-2{
+    background-color: #2B2A2A;
+    width: 1400px;
+    height: 630px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 70px;
+    margin-left: -20px;
+    
+    
+}
 
-
+.bottom-text{
+    margin-left: -50px;
+}

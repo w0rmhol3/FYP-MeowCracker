@@ -1,3 +1,4 @@
+//The function to generate the command on Straight Attack 
 function update_command(){
   console.log("Reach");
   var hash_type = document.getElementById('HashTypeDropdown').value;
@@ -6,6 +7,16 @@ function update_command(){
   const outputElement = document.getElementById('Straight-Attack');
   
   outputElement.textContent = "HashCat -a 0 -m "+ hash_type + " " + file_input + " -o StraightAttack.txt /usr/share/wordlists/" + wordlist;
+}
+
+//The function to generate the command on Brute Force Attack
+function update_command2(){
+  console.log("Reach");
+  var hash_type = document.getElementById('HashTypeDropdown2').value;
+  var file_input = document.getElementById('HashFile2').value;
+  const outputElement = document.getElementById('BruteForce-Attack');
+  
+  outputElement.textContent = "HashCat -a 3 -m "+ hash_type + " " + file_input;
 }
 
 //Function to switch the tabs within the website
@@ -33,6 +44,16 @@ function openTab(evt, Tab) {
   
   function copy_Command() {
     let text = document.getElementById('Straight-Attack').innerHTML;
+    try {
+      navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+  function copy_Command2() {
+    let text = document.getElementById('BruteForce-Attack').innerHTML;
     try {
       navigator.clipboard.writeText(text);
       console.log('Content copied to clipboard');
