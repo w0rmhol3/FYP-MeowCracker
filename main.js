@@ -1,3 +1,17 @@
+//Function for Lightmode switch 
+function SwitchMode() {
+  var lswitch = document.getElementById("Lightswitch");
+
+  
+  if (lswitch.checked == true){
+    document.body.style.backgroundColor = "#D2D2D1";
+
+  }else{
+    document.body.style.backgroundColor = "black";
+  }
+
+}
+
 //The function to generate the command on Straight Attack 
 function update_command(){
   console.log("Reach");

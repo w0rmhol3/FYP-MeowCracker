@@ -76,6 +76,75 @@ body {
     color:#C3C1C1;
   }
 
+/*Dark and Light mode switch */
+/* The switch - the box around the slider */
+.switch{
+    position: absolute;
+    display: inline-block;
+    width: 60px;
+    height: 30px;
+    margin-top: 10px;
+    margin-left: 900px;
+ }
+  
+/* Hide default HTML checkbox */
+.switch input{
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+  
+/* The slider */
+.slider{
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+.slider:before{
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+  
+input:checked + .slider{
+    background-color: #f3d421;
+    box-shadow: 0 0 25px #f3d421;
+}
+  
+input:focus + .slider {
+    box-shadow: 0 0 25px #f3d421;
+}
+
+input:checked + .slider:before{
+    -webkit-transform: translateX(29px);
+    -ms-transform: translateX(29px);
+    transform: translateX(29px);
+}
+  
+/* Make switch and slider round */
+  .slider.round{
+    border-radius: 30px;
+}
+  
+.slider.round:before{
+    border-radius: 50%;
+}
+
+
+
 .Content-box-1{
     font-family: 'Bree Serif', serif;
     margin-top: -10px;
@@ -225,3 +294,6 @@ border-radius: 20px;
 .bottom-text{
     margin-left: -50px;
 }
+
+
+
