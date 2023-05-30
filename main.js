@@ -16,56 +16,6 @@ function SwitchMode() {
 
 }
 
-function HashesDropdown()
-{
-
-  let dropdown = document.getElementById('HashTypeDropdown2');
-  dropdown.length = 0;
-  
-  let defaultOption = document.createElement('option');
-  defaultOption.text = 'Choose a hash';
-  
-  dropdown.add(defaultOption);
-  dropdown.selectedIndex = 0;
-  
-  const url = 'https://w0rmhol3.github.io/Hashes.json';
-  
-  fetch(url)  
-    .then(  
-      function(response) {  
-        if (response.status !== 200) {  
-          console.warn('Looks like there was a problem. Status Code: ' + 
-            response.status);  
-          return;  
-        }
-  
-        // Examine the text in the response  
-        response.json().then(function(data) {  
-          let option;
-      
-        for (let i = 0; i < data.length; i++) {
-            option = document.createElement('option');
-            option.text = data[i].name;
-            option.value = data[i].abbreviation;
-            dropdown.add(option);
-        }    
-        });  
-      }  
-    )  
-    .catch(function(err) {  
-      console.error('Fetch Error -', err);  
-    });
-}
-
-
-
-
-
-
-
-
-
-
 //The function to generate the command on Straight Attack 
 function update_command(){
   console.log("Reach");
@@ -129,3 +79,50 @@ function openTab(evt, Tab) {
       console.error('Failed to copy: ', err);
     }
   }
+
+//Function to load the options within Dropdownlist from JSON file 
+function HashesDropdown()
+{
+  let dropdown1 = document.getElementById('HashTypeDropdown');
+  let dropdown2 = document.getElementById('HashTypeDropdown2');
+  dropdown1.length = 0;
+  dropdown2.length = 0;
+
+  dropdown1.selectedIndex = 0;
+  dropdown2.selectedIndex = 0;
+  
+  const url = 'https://w0rmhol3.github.io/Hashes.json';
+  
+  fetch(url)  
+    .then(  
+      function(response) {  
+        if (response.status !== 200) {  
+          console.warn('Looks like there was a problem. Status Code: ' + 
+            response.status);  
+          return;  
+        }
+  
+        // Examine the text in the response  
+        response.json().then(function(data) {  
+          let option;
+      
+        for (let i = 0; i < data.length; i++) {
+            let option1 = document.createElement('option');
+            option1.className = 'Hash-items';
+            option1.value = data[i].HashValue;
+            option1.text = data[i].HashValue + ' - ' + data[i].HashName;
+            dropdown1.add(option1);
+
+            let option2 = document.createElement('option');
+            option2.className = 'Hash-items';
+            option2.value = data[i].HashValue;
+            option2.text = data[i].HashValue + ' - ' + data[i].HashName;
+            dropdown2.add(option2);
+        }    
+        });  
+      }  
+    )  
+    .catch(function(err) {  
+      console.error('Fetch Error -', err);  
+    });
+}

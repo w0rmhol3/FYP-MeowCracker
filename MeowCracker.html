@@ -26,10 +26,10 @@
             
             <!-- Tab links -->
             <div class="Main-tab">
-                <button class="Tablinks active" onclick="openTab(event, 'Command-Generator')">Command Generator</button>
+                <button class="Tablinks active" onclick="openTab(event, 'Tutorial')">Tutorial</button>
                 <button class="Tablinks" onclick="openTab(event, 'Hashes')">Hashes</button>
-                <button class="Tablinks" onclick="openTab(event, 'Tutorial')">Tutorial</button>
-
+                <button class="Tablinks" onclick="openTab(event, 'Command-Generator');HashesDropdown()">Command Generator</button>
+                
                 <!-- Lightmode switch -->
                 <label class="switch">
                     <input type="checkbox" id ="Lightswitch" onclick="SwitchMode()">
@@ -41,7 +41,7 @@
             <div class = Content-box-1>
                 
                 <!--Command Generator Tab-->
-                <div id="Command-Generator" class="Tabcontent active">
+                <div id="Command-Generator" class="Tabcontent">
 
                     <!--The Command Generator for Straight Attack Mode of HashCat-->
                     <h1>
@@ -61,23 +61,7 @@
 
                     <!--Dropdown list of Hashes to let user select from-->
                     <select class ="DropdownContent" name="HashType" id="HashTypeDropdown" onclick="javascript:update_command()">
-                        <option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "300">300 - MySQL4.1/MySQL5</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "500">500 - UNIX Crypt</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "900">900 - MD4</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "1300">1300 - SHA224</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "1400">1400 - SHA256</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "1700">1700 - SHA512</option>   
-                        <option class = "Hash-items" class = "custom-selection" value = "3000">3000 - LM</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "7500">7500 - Kerberos 5</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "10800">10800 - SHA384</option>                         
-                        <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 1</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 2</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "13711">13711 - VeraCrypt</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "14000">14000 - DES(PT = $salt, key = $pass)8</option>
-                        <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>                 
+                        <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>-->            
                     </select>
                     <br>
                     <br>
@@ -142,24 +126,8 @@
                         </h2>
     
                         <!--Dropdown list of Hashes to let user select from-->
-                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick = "HashesDropdown()" onclick="javascript:update_command2()">
-                            <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "300">300 - MySQL4.1/MySQL5</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "500">500 - UNIX Crypt</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "900">900 - MD4</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "1300">1300 - SHA224</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "1400">1400 - SHA256</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "1700">1700 - SHA512</option>   
-                            <option class = "Hash-items" class = "custom-selection" value = "3000">3000 - LM</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "7500">7500 - Kerberos 5</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "10800">10800 - SHA384</option>                         
-                            <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 1</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 2</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "13711">13711 - VeraCrypt</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "14000">14000 - DES(PT = $salt, key = $pass)8</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>-->                 
+                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick="javascript:update_command2()">
+                            <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option> -->               
                         </select>
                         <br>
                         <br>
@@ -197,8 +165,6 @@
 
 
 
-
-
                     <!--Clarification Text-->
                     <a class = "bottom-text">
                         *MeowCracker uses the default directory of the wordlist located in /usr/share/wordlists/
@@ -219,7 +185,7 @@
                 </div>
                 
                 <!--Tutorial Tab-->
-                <div id="Tutorial" class="Tabcontent">
+                <div id="Tutorial" class="Tabcontent active">
                     <h1>
                         <u>What Is MeowCracker?</u>
                     </h1>
