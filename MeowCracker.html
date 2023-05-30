@@ -2,9 +2,10 @@
 <HTML>
     <head>
         <title>MeowCracker - Online HashCat Command Generator</title>   
-        <!--External JS and CSS-->
+        <!--External JS, CSS, and JSON-->
         <link rel="stylesheet" href="main.css">
         <script src="main.js"></script>
+        <script type="text/javascript" src="Hashes.json"></script>
         <script src="https://kit.fontawesome.com/3c2bd4f4b6.js" crossorigin="anonymous"></script>
 
         <!--Font Family-->
@@ -141,8 +142,8 @@
                         </h2>
     
                         <!--Dropdown list of Hashes to let user select from-->
-                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick="javascript:update_command2()">
-                            <option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
+                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick = "HashesDropdown()" onclick="javascript:update_command2()">
+                            <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option>
                             <option class = "Hash-items" class = "custom-selection" value = "100">100 - SHA1</option>
                             <option class = "Hash-items" class = "custom-selection" value = "200">200 - MySQL323</option>
                             <option class = "Hash-items" class = "custom-selection" value = "300">300 - MySQL4.1/MySQL5</option>
@@ -158,7 +159,7 @@
                             <option class = "Hash-items" class = "custom-selection" value = "13400">13400 - KeePass 2</option>
                             <option class = "Hash-items" class = "custom-selection" value = "13711">13711 - VeraCrypt</option>
                             <option class = "Hash-items" class = "custom-selection" value = "14000">14000 - DES(PT = $salt, key = $pass)8</option>
-                            <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>                 
+                            <option class = "Hash-items" class = "custom-selection" value = "14100">14100 - 3DES (PT = $salt, key = $pass) 9</option>-->                 
                         </select>
                         <br>
                         <br>
