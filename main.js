@@ -23,7 +23,7 @@ function update_command(){
   var wordlist = document.getElementById('Wordlist').value;
   const outputElement = document.getElementById('Straight-Attack');
   
-  outputElement.textContent = "HashCat -a 0 -m "+ hash_type + " " + file_input + " -o StraightAttack.txt /usr/share/wordlists/" + wordlist;
+  outputElement.textContent = "hashcat -a 0 -m "+ hash_type + " " + file_input + " -o StraightAttack.txt /usr/share/wordlists/" + wordlist;
 }
 
 //The function to generate the command on Brute Force Attack
@@ -32,7 +32,7 @@ function update_command2(){
   var file_input = document.getElementById('HashFile2').value;
   const outputElement = document.getElementById('BruteForce-Attack');
   
-  outputElement.textContent = "HashCat -a 3 -m "+ hash_type + " " + file_input;
+  outputElement.textContent = "hashcat -a 3 -m "+ hash_type + " " + file_input;
 }
 
 //Function to switch the tabs within the website
