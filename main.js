@@ -18,7 +18,6 @@ function SwitchMode() {
 
 //The function to generate the command on Straight Attack 
 function update_command(){
-  console.log("Reach");
   var hash_type = document.getElementById('HashTypeDropdown').value;
   var file_input = document.getElementById('HashFile').value;
   var wordlist = document.getElementById('Wordlist').value;
@@ -29,7 +28,6 @@ function update_command(){
 
 //The function to generate the command on Brute Force Attack
 function update_command2(){
-  console.log("Reach");
   var hash_type = document.getElementById('HashTypeDropdown2').value;
   var file_input = document.getElementById('HashFile2').value;
   const outputElement = document.getElementById('BruteForce-Attack');
@@ -62,22 +60,12 @@ function openTab(evt, Tab) {
   
   function copy_Command() {
     let text = document.getElementById('Straight-Attack').innerHTML;
-    try {
-      navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
+    navigator.clipboard.writeText(text);
   }
 
   function copy_Command2() {
     let text = document.getElementById('BruteForce-Attack').innerHTML;
-    try {
-      navigator.clipboard.writeText(text);
-      console.log('Content copied to clipboard');
-    } catch (err) {
-      console.error('Failed to copy: ', err);
-    }
+    navigator.clipboard.writeText(text);
   }
 
 //Function to load the options within Dropdownlist from JSON file 
