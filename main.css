@@ -324,5 +324,40 @@ border-radius: 20px;
     margin-left: -50px;
 }
 
+.Hashbox{
+    margin-top: 10px;
+    margin-left: 0px;
+    width: 1400px;
+    height: 750px;
+    overflow-y: auto;
+}
 
+.Hashbox::-webkit-scrollbar{
+    width: 10px;
+}
+
+.Hashbox::-webkit-scrollbar-track{
+    background: #6e6b6b;
+    border-radius: 20px;
+}
+
+.Hashbox::-webkit-scrollbar-thumb{
+    background: #332f2f;
+    border-radius: 20px;
+}
+
+.HashTable table,th,td{
+    border: 1px solid white;
+    width: 1000px;
+    display: absolute;
+    margin-left: 180px;
+}
+
+#HashNum{
+    width: 150px;
+}
+
+#HashValue{
+    width: 600px;
+}
 

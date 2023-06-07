@@ -18,7 +18,7 @@
 {"HashValue":"200","HashName":"MySQL323"},
 {"HashValue":"300","HashName":"MySQL4.1/MySQL5"},
 {"HashValue":"400","HashName":"phpass, WordPress (MD5),"},
-{"HashValue":"","HashName":"Joomla (MD5)"},
+{"HashValue":"400","HashName":"Joomla (MD5)"},
 {"HashValue":"400","HashName":"phpass, phpBB3 (MD5)"},
 {"HashValue":"500","HashName":"md5crypt, MD5 (Unix), Cisco-IOS $1$ (MD5)2"}
 ,

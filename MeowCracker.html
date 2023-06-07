@@ -27,7 +27,7 @@
             <!-- Tab links -->
             <div class="Main-tab">
                 <button class="Tablinks active" onclick="openTab(event, 'Tutorial')">Tutorial</button>
-                <button class="Tablinks" onclick="openTab(event, 'Hashes')">Hashes</button>
+                <button class="Tablinks" onclick="openTab(event, 'Hashes');HashesTable()">Hashes</button>
                 <button class="Tablinks" onclick="openTab(event, 'Command-Generator');HashesDropdown()">Command Generator</button>
                 
                 <!-- Lightmode switch -->
@@ -178,10 +178,26 @@
                 
                 <!--Hashes Tab-->
                 <div id="Hashes" class="Tabcontent">
+                    <div class = Hashbox>
                     <h1>
                         <u>This is the entire list of Hashes that is supported by HashCat:</u>
                     </h1>
-                    
+
+                        <div class = "HashTable">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th id = "HashNum">No</th>
+                                    <th id = "HashValue">Hash Value</th>
+                                    <th id = "HashName">Hash Name</th>
+                                </tr>
+                            </thead>
+                                <tbody id = "data-output">
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div> 
                 </div>
                 
                 <!--Tutorial Tab-->

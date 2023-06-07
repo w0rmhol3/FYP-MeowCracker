@@ -92,7 +92,7 @@ function HashesDropdown()
   
         // Examine the text in the response  
         response.json().then(function(data) {  
-          let option;
+          
       
         for (let i = 0; i < data.length; i++) {
             let option1 = document.createElement('option');
@@ -113,4 +113,38 @@ function HashesDropdown()
     .catch(function(err) {  
       console.error('Fetch Error -', err);  
     });
+}
+
+
+//Function to load the List of Hash within JSON file to Table 
+function HashesTable()
+{
+  const url = 'https://w0rmhol3.github.io/Hashes.json';
+  
+  fetch(url)
+  .then(function(response){
+    if (response.status !== 200) {  
+      console.warn('Looks like there was a problem. Status Code: ' + 
+        response.status);  
+      return;  
+    }
+    return response.json();
+  })
+  .then(function(data){
+    let placeholder = document.querySelector("#data-output");
+
+    let out = "";
+
+    for (let i = 0; i < data.length; i++){
+      out += `
+      <tr>
+        <td>${[i+1]}</td>
+        <td>${data[i].HashValue}</td>
+        <td>${data[i].HashName}</td>
+      </tr>
+      `;
+    }
+
+    placeholder.innerHTML = out;
+  })
 }
