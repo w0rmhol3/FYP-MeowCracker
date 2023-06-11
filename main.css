@@ -11,20 +11,22 @@
     --copy-box: 1px solid white;
     --copy-btn-bg: white;
     --icon-color: #454029;
+    --table-border: 1px solid white;
 }
 
 :root.light{
-    --body-bg:#eeeae0;
+    --body-bg:#ffffff;
     --font-color: black; 
-    --box-bg: #f5eb84;
-    --box-border: 5px solid #a89e27;
-    --tab-color: #a89e27;
-    --tab-hover-active-color: yellow;
-    --copy-hover-color: #aa9f28;
-    --copy-active-color: #575217;
+    --box-bg: #efeded;
+    --box-border: 5px solid #545151;
+    --tab-color: #545151;
+    --tab-hover-active-color: #A7A076;
+    --copy-hover-color: #525252;
+    --copy-active-color: #363636;
     --copy-box: 1px solid #5e5a31;
-    --copy-btn-bg: #5e5a31;
-    --icon-color: #dbce40;
+    --copy-btn-bg: #000000;
+    --icon-color: #ffffff;
+    --table-border: 1px solid #545151;
 }
 
 body {
@@ -265,7 +267,7 @@ transform-origin: left;
     outline: none;
     box-shadow: inset 0 -2px 0 yellow; 
 }
-#HashFile, #HashFile2, #Wordlist{
+#HashFile, #HashFile2, #HashFile3, #Wordlist, #CAWordlist1, #CAWordlist2{
 border-radius: 20px;
 }
 
@@ -276,7 +278,7 @@ border-radius: 20px;
     height: 90px;
 }
 
-#Straight-Attack, #BruteForce-Attack{
+#Straight-Attack, #Combination-Attack, #BruteForce-Attack{
     font-size: 25px;
 }
 
@@ -311,13 +313,11 @@ border-radius: 20px;
 .Content-box-2{
     background-color: var(--box-bg);
     width: 1400px;
-    height: 630px;
+    height: 890px;
     border-radius: 20px;
     padding: 10px;
     margin-top: 70px;
     margin-left: -20px;
-    
-    
 }
 
 .bottom-text{
@@ -347,7 +347,7 @@ border-radius: 20px;
 }
 
 .HashTable table,th,td{
-    border: 1px solid white;
+    border: var(--table-border);
     width: 1000px;
     display: absolute;
     margin-left: 180px;
@@ -361,3 +361,12 @@ border-radius: 20px;
     width: 600px;
 }
 
+.Content-box-3{
+    background-color: var(--box-bg);
+    width: 1400px;
+    height: 630px;
+    border-radius: 20px;
+    padding: 10px;
+    margin-top: 30px;
+    margin-left: -20px;
+}

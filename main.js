@@ -26,10 +26,20 @@ function update_command(){
   outputElement.textContent = "hashcat -a 0 -m "+ hash_type + " " + file_input + " -o StraightAttack.txt /usr/share/wordlists/" + wordlist;
 }
 
-//The function to generate the command on Brute Force Attack
 function update_command2(){
   var hash_type = document.getElementById('HashTypeDropdown2').value;
   var file_input = document.getElementById('HashFile2').value;
+  var CAwordlist = document.getElementById('CAWordlist1').value;
+  var CAwordlist2 = document.getElementById('CAWordlist2').value;
+  const outputElement = document.getElementById('Combination-Attack');
+  
+  outputElement.textContent = "hashcat -a 1 -m "+ hash_type + " " + file_input + " /usr/share/wordlists/" + CAwordlist + " /usr/share/wordlists/" + CAwordlist2;
+}
+
+//The function to generate the command on Brute Force Attack
+function update_command3(){
+  var hash_type = document.getElementById('HashTypeDropdown3').value;
+  var file_input = document.getElementById('HashFile3').value;
   const outputElement = document.getElementById('BruteForce-Attack');
   
   outputElement.textContent = "hashcat -a 3 -m "+ hash_type + " " + file_input;
@@ -64,7 +74,7 @@ function openTab(evt, Tab) {
   }
 
   function copy_Command2() {
-    let text = document.getElementById('BruteForce-Attack').innerHTML;
+    let text = document.getElementById('Combination-Attack').innerHTML;
     navigator.clipboard.writeText(text);
   }
 
@@ -73,12 +83,15 @@ function HashesDropdown()
 {
   let dropdown1 = document.getElementById('HashTypeDropdown');
   let dropdown2 = document.getElementById('HashTypeDropdown2');
+  let dropdown3 = document.getElementById('HashTypeDropdown3');
   dropdown1.length = 0;
   dropdown2.length = 0;
+  dropdown3.length = 0;
 
   dropdown1.selectedIndex = 0;
   dropdown2.selectedIndex = 0;
-  
+  dropdown3.selectedIndex = 0;
+
   const url = 'https://w0rmhol3.github.io/Hashes.json';
   
   fetch(url)  
@@ -106,6 +119,12 @@ function HashesDropdown()
             option2.value = data[i].HashValue;
             option2.text = data[i].HashValue + ' - ' + data[i].HashName;
             dropdown2.add(option2);
+
+            let option3 = document.createElement('option');
+            option3.className = 'Hash-items';
+            option3.value = data[i].HashValue;
+            option3.text = data[i].HashValue + ' - ' + data[i].HashName;
+            dropdown3.add(option3);
         }    
         });  
       }  

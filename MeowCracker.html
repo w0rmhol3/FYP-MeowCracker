@@ -98,7 +98,7 @@
                     <div class = "Command-box">
                         <center>
                             <p id = "Straight-Attack">
-                                hashcat -a 0 -m *hash value* -o staightattack.txt *Hash file* *wordlist.txt*
+                                hashcat -a 0 -m *hash value* -o staightattack.txt *Hash file* *Wordlist.txt*
                             </p>
                         </center>
                     </div>
@@ -107,8 +107,86 @@
                         <button class = "CopyBtn1" onclick="copy_Command()"><i class="fa-solid fa-copy"></i></button>
                     </div>
 
-                    <!--Start of Brute Force Attack Content-->
+                    <!--Start of Combination Attack Content-->
                     <div class = Content-box-2>
+                        <h1>
+                            <u>HashCat: Combination Attack (Option 1)</u>
+                        </h1>
+    
+                        <h3>
+                            In the Combination Attack mode of HashCat, it allows HashCat to run two dictionaries at once.
+                            It is knowned to be “combined” as each word of a dictionary will be bined into a single word 
+                            for each word in another dictionary.
+                            Here are the required details:
+                        </h3>
+                        
+                        
+                        <h2>
+                            1. Please Choose the Type of Hash to Crack: 
+                        </h2>
+    
+                        <!--Dropdown list of Hashes to let user select from-->
+                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick="javascript:update_command2()">
+                            <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option> -->               
+                        </select>
+                        <br>
+                        <br>         
+                        
+    
+                        <h2>
+                            2. Please Provide the Hash File Name: 
+                        </h2>
+    
+                        <!--Input box for Name of Hash File-->
+                        <label for="Inputbox" class="Inputbox">
+                            <input type="text" id="HashFile2" placeholder="&nbsp;" onkeyup="javascript:update_command2()">
+                            <span class="label">Hash.txt</span>
+                        </label>
+
+                        <h2>
+                            3. Please Provide the first Wordlists Name: 
+                        </h2>
+    
+                        <!--Input box for Wordlist-->
+                        <label for="Inputbox" class="Inputbox">
+                            <input type="text" id="CAWordlist1" placeholder="&nbsp;" onkeyup="javascript:update_command2()">
+                            <span class="label">Wordlist.txt</span>
+                        </label>
+
+                        <h2>
+                            3. Please Provide the second Wordlists Name: 
+                        </h2>
+    
+                        <!--Input box for Wordlist-->
+                        <label for="Inputbox" class="Inputbox">
+                            <input type="text" id="CAWordlist2" placeholder="&nbsp;" onkeyup="javascript:update_command2()">
+                            <span class="label">Wordlist.txt</span>
+                        </label>
+
+                        <h2>
+                            Command Generation:
+                        </h2>
+
+                        <div class = "Command-box">
+                            <center>
+                                <p id = "Combination-Attack">
+                                    hashcat -m 0 -a 1 *HashFile* *Wordlist1.txt* *Wordlist2.txt*
+                                </p>
+                            </center>
+                        </div>
+
+                        <div class = "CopyBox1">
+                            <button class = "CopyBtn1" onclick="copy_Command2()"><i class="fa-solid fa-copy"></i></button>
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!--Brute Force Attack-->
+                    <div class = Content-box-3>
                         <h1>
                             <u>HashCat: Brute Force Attack (Option 3)</u>
                         </h1>
@@ -126,12 +204,11 @@
                         </h2>
     
                         <!--Dropdown list of Hashes to let user select from-->
-                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown2" onclick="javascript:update_command2()">
+                        <select class ="DropdownContent" name="HashType" id="HashTypeDropdown3" onclick="javascript:update_command3()">
                             <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option> -->               
                         </select>
                         <br>
-                        <br>
-                        
+                        <br>                        
                         
     
                         <h2>
@@ -140,7 +217,7 @@
     
                         <!--Input box for Name of Hash File-->
                         <label for="Inputbox" class="Inputbox">
-                            <input type="text" id="HashFile2" placeholder="&nbsp;" onkeyup="javascript:update_command2()">
+                            <input type="text" id="HashFile3" placeholder="&nbsp;" onkeyup="javascript:update_command3()">
                             <span class="label">Hash.txt</span>
                         </label>
 
@@ -161,7 +238,6 @@
                         </div>
 
                     </div>
-
 
 
 
