@@ -28,7 +28,8 @@
             <div class="Main-tab">
                 <button class="Tablinks active" onclick="openTab(event, 'Tutorial')">Tutorial</button>
                 <button class="Tablinks" onclick="openTab(event, 'Hashes');HashesTable()">Hashes</button>
-                <button class="Tablinks" onclick="openTab(event, 'Command-Generator');HashesDropdown()">Command Generator</button>
+                <button class="Tablinks" onclick="openTab(event, 'Command-Generator');HashesDropdown()">Basic Command Mode</button>
+                <button class="Tablinks" onclick="openTab(event, 'Command-Generator-2');HashesDropdown()">Advanced Command Mode</button>
                 
                 <!-- Lightmode switch -->
                 <label class="switch">
@@ -181,10 +182,6 @@
 
                     </div>
 
-
-
-
-
                     <!--Start of Brute Force Attack Content-->
                     <div class = Content-box-3>
                         <h1>
@@ -234,7 +231,7 @@
                         </div>
 
                         <div class = "CopyBox1">
-                            <button class = "CopyBtn1" onclick="copy_Command2()"><i class="fa-solid fa-copy"></i></button>
+                            <button class = "CopyBtn1" onclick="copy_Command3()"><i class="fa-solid fa-copy"></i></button>
                         </div>
 
                     </div>
@@ -250,6 +247,78 @@
                         *If you had relocated the wordlists in a different path, remember to change the directory when you pasted the command.
                     </a>
 
+                </div>
+
+                <!--Advanced Command Tab-->
+                <div id="Command-Generator-2" class="Tabcontent">
+                    <h1>
+                        <u>HashCat: Hybrid Attacks</u>
+                    </h1>
+
+                    <h3>
+                        Basically, the hybrid attack is just a Combinator attack. 
+                        One side is simply a dictionary, the other is the result of a Brute-Force attack. In other words, the full Brute-Force keyspace is either appended or prepended to each of the words from the dictionary. 
+                        Hence, the name “hybrid”.
+                        Alternatively, Mask attack or Rule-based attack can replace the Brute-Force side.
+                    </h3>
+
+                    <h2>
+                        Attack Mode: 
+                    </h2>
+
+                    <input type ="radio" id ="Attack-Mode-6" name ="Attack-Mode" value = "6">
+                    <label for="Attack-Mode-6">6 - Hybrid Wordlist + Mask</label>
+                    <input type ="radio" id ="Attack-Mode-7" name ="Attack-Mode" value = "7">
+                    <label for="Attack-Mode-7">7 - Hybrid Mask + Wordlist</label>
+
+                    <div class = "Output-Settings">
+                        <h2>
+                            Output Display Settings: 
+                        </h2>
+
+                        <input type ="radio" id ="Show-Output" name ="Output-Settings" value = "0">
+                        <label for="Attack-Mode-6">Show Output</label>
+                        <input type ="radio" id ="Output-File" name ="Output-Settings" value = "1">
+                        <label for="Attack-Mode-7">Save Output</label>
+                    </div>
+                    
+                    <h2>
+                        Targeted Hash Type: 
+                    </h2>
+
+                    <!--Dropdown list of Hashes to let user select from-->
+                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown4" onclick="javascript:update_command4()">
+                        <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option> -->               
+                    </select>
+                    <br>
+                    <br>                        
+                    
+
+                    <h2>
+                        Hash File Name: 
+                    </h2>
+
+                    <!--Input box for Name of Hash File-->
+                    <label for="Inputbox" class="Inputbox">
+                        <input type="text" id="HashFile3" placeholder="&nbsp;" onkeyup="javascript:update_command4()">
+                        <span class="label">Hash.txt</span>
+                    </label>
+
+                    <h2>
+                        Command Generation:
+                    </h2>
+
+                    <div class = "Command-box">
+                        <center>
+                            <p id = "Hybrid-Attack">
+                                hashcat -a -m *hash value* *Hash file* *Charset definition*
+                            </p>
+                        </center>
+                    </div>
+
+                    <div class = "CopyBox1">
+                        <button class = "CopyBtn1" onclick="copy_Command2()"><i class="fa-solid fa-copy"></i></button>
+                    </div>
                 </div>
                 
                 <!--Hashes Tab-->

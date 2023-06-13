@@ -280,7 +280,7 @@ border-radius: 20px;
     height: 90px;
 }
 
-#Straight-Attack, #Combination-Attack, #BruteForce-Attack{
+#Straight-Attack, #Combination-Attack, #BruteForce-Attack, #Hybrid-Attack{
     font-size: 25px;
 }
 
@@ -371,4 +371,10 @@ border-radius: 20px;
     padding: 10px;
     margin-top: 30px;
     margin-left: -20px;
+}
+
+.Output-Settings{
+    position: absolute;
+    margin-left: 500px;
+    margin-top: -94px;
 }

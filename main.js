@@ -79,19 +79,32 @@ function openTab(evt, Tab) {
     navigator.clipboard.writeText(text);
   }
 
+  function copy_Command3() {
+    let text = document.getElementById('BruteForce-Attack').innerHTML;
+    navigator.clipboard.writeText(text);
+  }
+
+  function copy_Command4() {
+    let text = document.getElementById('Hybrid-Attack').innerHTML;
+    navigator.clipboard.writeText(text);
+  }
+
 //Function to load the options within Dropdownlist from JSON file 
 function HashesDropdown()
 {
   let dropdown1 = document.getElementById('HashTypeDropdown');
   let dropdown2 = document.getElementById('HashTypeDropdown2');
   let dropdown3 = document.getElementById('HashTypeDropdown3');
+  let dropdown4 = document.getElementById('HashTypeDropdown4');
   dropdown1.length = 0;
   dropdown2.length = 0;
   dropdown3.length = 0;
+  dropdown4.length = 0;
 
   dropdown1.selectedIndex = 0;
   dropdown2.selectedIndex = 0;
   dropdown3.selectedIndex = 0;
+  dropdown4.selectedIndex = 0;
 
   const url = 'https://w0rmhol3.github.io/Hashes.json';
   
@@ -126,6 +139,12 @@ function HashesDropdown()
             option3.value = data[i].HashValue;
             option3.text = data[i].HashValue + ' - ' + data[i].HashName;
             dropdown3.add(option3);
+
+            let option4 = document.createElement('option');
+            option4.className = 'Hash-items';
+            option4.value = data[i].HashValue;
+            option4.text = data[i].HashValue + ' - ' + data[i].HashName;
+            dropdown4.add(option4);
         }    
         });  
       }  
