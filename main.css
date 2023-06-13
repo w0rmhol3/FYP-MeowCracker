@@ -208,6 +208,7 @@ transform-origin: left;
     position: relative;
     margin: auto;
     width: 100%;
+    min-width: 725px;
     max-width: 280px;
     border-radius: 3px;
     overflow: hidden; 
@@ -228,7 +229,7 @@ transform-origin: left;
 .Inputbox input{
     -webkit-appearance: none;
     appearance: none;
-    width: 500px;
+    width: 670px;
     border: 10px;
     font-family: inherit;
     padding: 16px 12px 0 12px;
@@ -237,6 +238,7 @@ transform-origin: left;
     font-weight: 400;
     color: grey;
     transition: all .15s ease; 
+    font-size: 23px;
 }
 
 .Inputbox input:not(:placeholder-shown) + .label{

@@ -50,7 +50,7 @@
 
                     <h3>
                         The HashCat Straight Attack mode is the most direct way to use HashCat. 
-                        It will run a brute force Attack on the targeted hash file provided until it finds a match. 
+                        It will run a Dictionary Attack on the targeted hash file provided to find a match on the hash. 
                         It only requires 3 things:
                     </h3>
                     
@@ -98,7 +98,7 @@
                     <div class = "Command-box">
                         <center>
                             <p id = "Straight-Attack">
-                                hashcat -a 0 -m *hash value* -o staightattack.txt *Hash file* *Wordlist.txt*
+                                hashcat -a 0 -m *hash value* *Hash file* *Wordlist.txt* --show
                             </p>
                         </center>
                     </div>
@@ -170,7 +170,7 @@
                         <div class = "Command-box">
                             <center>
                                 <p id = "Combination-Attack">
-                                    hashcat -m 0 -a 1 *HashFile* *Wordlist1.txt* *Wordlist2.txt*
+                                    hashcat -m 0 -a 1 *HashFile* *Wordlist1.txt* *Wordlist2.txt* --show
                                 </p>
                             </center>
                         </div>
@@ -228,7 +228,7 @@
                         <div class = "Command-box">
                             <center>
                                 <p id = "BruteForce-Attack">
-                                    hashcat -a 3 -m *hash value* *Hash file*
+                                    hashcat -a 3 -m *hash value* *Hash file* --show
                                 </p>
                             </center>
                         </div>
