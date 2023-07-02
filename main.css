@@ -12,6 +12,7 @@
     --copy-btn-bg: white;
     --icon-color: #454029;
     --table-border: 1px solid white;
+    --disabled-input-bg: #525252;
 }
 
 :root.light{
@@ -27,6 +28,7 @@
     --copy-btn-bg: #000000;
     --icon-color: #ffffff;
     --table-border: 1px solid #545151;
+    --disabled-input-bg: #a8a8a8;
 }
 
 body {
@@ -269,7 +271,7 @@ transform-origin: left;
     outline: none;
     box-shadow: inset 0 -2px 0 yellow; 
 }
-#HashFile, #HashFile2, #HashFile3, #Wordlist, #CAWordlist1, #CAWordlist2{
+#HashFile, #HashFile2, #HashFile3, #HashFile4, #Wordlist, #CAWordlist1, #CAWordlist2, #CharsetValue{
 border-radius: 20px;
 }
 
@@ -377,4 +379,93 @@ border-radius: 20px;
     position: absolute;
     margin-left: 500px;
     margin-top: -94px;
+}
+
+.PredifinedCharset{
+    position: absolute;
+    margin-left: 900px;
+    margin-top: -94px;
+}
+
+.CharsetInput{
+    position: absolute;
+    margin-left: 740px;
+    margin-top: -150px;
+}
+
+.Inputbox2{
+    position: relative;
+    margin: auto;
+    width: 100%;
+    min-width: 725px;
+    max-width: 280px;
+    border-radius: 3px;
+    overflow: hidden; 
+}
+
+.Inputbox2 :disabled{
+    background-color: var(--disabled-input-bg);
+}
+
+
+.Inputbox2 .label{
+      position: absolute;
+      top: -15px;
+      left: 12px;
+      font-size: 26px;
+      font-weight: 500;
+      transform-origin: 0 0;
+      transform: translate3d(0, 0, 0);
+      transition: all .2s ease;
+      pointer-events: none; 
+}
+
+.Inputbox2 input{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 570px;
+    border: 10px;
+    font-family: inherit;
+    padding: 16px 12px 0 12px;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    color: grey;
+    transition: all .15s ease; 
+    font-size: 23px;
+}
+
+.Inputbox2 input:not(:placeholder-shown) + .label{
+    transform: translate3d(0, -12px, 0) scale(0.75); 
+}
+
+.Inputbox2 input:focus{
+    outline: none;
+    box-shadow: inset 0 -2px 0 yellow; 
+}
+
+.Inputbox2 input:focus + .label{
+    color: primary;
+    transform: translate3d(0, -12px, 0) scale(0.75); 
+}
+
+.ReferenceSource{
+    position: absolute;
+    padding-left: 40px;
+    margin-left: 740px;
+    margin-top: -120px;
+    border: var(--box-border);
+    border-radius: 20px;
+    width: 550px;
+    height: 160px;
+}
+
+.ReferenceBox{
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 100px;
+}
+
+.ReferenceBox a{
+    font-size: 30px;
 }

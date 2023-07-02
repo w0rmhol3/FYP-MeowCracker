@@ -266,20 +266,34 @@
                         Attack Mode: 
                     </h2>
 
-                    <input type ="radio" id ="Attack-Mode-6" name ="Attack-Mode" value = "6">
-                    <label for="Attack-Mode-6">6 - Hybrid Wordlist + Mask</label>
-                    <input type ="radio" id ="Attack-Mode-7" name ="Attack-Mode" value = "7">
-                    <label for="Attack-Mode-7">7 - Hybrid Mask + Wordlist</label>
+                    <!--Radio Button for Attack Mode-->
+                    <input type ="radio" id ="AM6" name ="Attack-Mode" value = "6" onclick="javascript:update_command4()" checked="checked">
+                    <label for="AM6">6 - Hybrid Wordlist + Mask</label>
+                    <input type ="radio" id ="AM7" name ="Attack-Mode" value = "7" onclick="javascript:update_command4()">
+                    <label for="AM7">7 - Hybrid Mask + Wordlist</label>
 
+                    <!--Radio Button for Output Result Settings-->
                     <div class = "Output-Settings">
                         <h2>
                             Output Display Settings: 
                         </h2>
 
-                        <input type ="radio" id ="Show-Output" name ="Output-Settings" value = "0">
-                        <label for="Attack-Mode-6">Show Output</label>
-                        <input type ="radio" id ="Output-File" name ="Output-Settings" value = "1">
-                        <label for="Attack-Mode-7">Save Output</label>
+                        <input type ="radio" id ="ShowOutput" name ="Output-Settings" value = "--show" onclick="javascript:update_command4()" checked="checked">
+                        <label for="ShowOutput">Show Output</label>
+                        <input type ="radio" id ="OutputFile" name ="Output-Settings" value = "-o Hybrid-Attack.txt" onclick="javascript:update_command4()">
+                        <label for="OutputFile">Save Output</label>
+                    </div>
+
+                    <!--Radio Button for Charset Definition On or Off-->
+                    <div class = "PredifinedCharset">
+                        <h2>
+                            Charset Settings: 
+                        </h2>
+
+                        <input type ="radio" id ="CharsetOff" name ="Charset-Settings" value = "0" onclick="javascript:setDisable()" checked="checked">
+                        <label for="CharsetOff">Charset Off</label>
+                        <input type ="radio" id ="CharsetOn" name ="Charset-Settings" value = "1" onclick="javascript:setDisable()">
+                        <label for="CharsetOn">Charset On</label>
                     </div>
                     
                     <h2>
@@ -287,11 +301,22 @@
                     </h2>
 
                     <!--Dropdown list of Hashes to let user select from-->
-                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown4" onclick="javascript:update_command4()">
-                        <!--<option class = "Hash-items" class = "custom-selection" value = "0">0 - MD5</option> -->               
+                    <select class ="DropdownContent" name="HashType" id="HashTypeDropdown4" onclick="javascript:update_command4()">          
                     </select>
                     <br>
-                    <br>                        
+                    <br>
+                    
+                    <div class = "CharsetInput">
+                        <h2>
+                            Predefined Charset: 
+                        </h2>
+
+                        <!--Input box for Name of Hash File-->
+                        <label for="Inputbox2" class="Inputbox2">
+                            <input type="text" id="CharsetValue" placeholder="&nbsp;" onkeyup="javascript:update_command4()" disabled>
+                            <span class="label">eg: ?l?l?l?l?d?d?d?d</span>
+                        </label>
+                    </div>
                     
 
                     <h2>
@@ -300,9 +325,19 @@
 
                     <!--Input box for Name of Hash File-->
                     <label for="Inputbox" class="Inputbox">
-                        <input type="text" id="HashFile3" placeholder="&nbsp;" onkeyup="javascript:update_command4()">
+                        <input type="text" id="HashFile4" placeholder="&nbsp;" onkeyup="javascript:update_command4()">
                         <span class="label">Hash.txt</span>
                     </label>
+
+                    <div class = ReferenceSource>
+                        <h2>
+                            For the Predefine Charset, You May Refer Here:
+                        </h2>
+
+                        <div class = ReferenceBox>
+                            <a href="https://github.com/frizb/Hashcat-Cheatsheet">HashCat CheatSheet</a>
+                        </div>
+                    </div>
 
                     <h2>
                         Command Generation:
@@ -311,13 +346,13 @@
                     <div class = "Command-box">
                         <center>
                             <p id = "Hybrid-Attack">
-                                hashcat -a -m *hash value* *Hash file* *Charset definition*
+                                hashcat -a 6 -m 0 --show
                             </p>
                         </center>
                     </div>
 
                     <div class = "CopyBox1">
-                        <button class = "CopyBtn1" onclick="copy_Command2()"><i class="fa-solid fa-copy"></i></button>
+                        <button class = "CopyBtn1" onclick="copy_Command4()"><i class="fa-solid fa-copy"></i></button>
                     </div>
                 </div>
                 

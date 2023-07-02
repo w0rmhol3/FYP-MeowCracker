@@ -46,6 +46,39 @@ function update_command3(){
   outputElement.textContent = "hashcat -a 3 -m "+ hash_type + " " + file_input + " --show";
 }
 
+//The function to generate the command on Hybrid Attack
+function update_command4(){
+
+  var AdvanceMode = "hashcat -a";
+
+  if (AM6.checked){
+    AdvanceMode += " " + AM6.value;
+  }
+
+  if (AM7.checked){
+    AdvanceMode += " " + AM7.value;
+  }
+
+  AdvanceMode += " " + "-m ";
+
+  var hash_type = document.getElementById('HashTypeDropdown4').value;
+  var file_input = document.getElementById('HashFile4').value;
+  const outputElement = document.getElementById('Hybrid-Attack');
+
+  AdvanceMode += " " + hash_type + " " + file_input + " " + CharsetValue.value;
+
+  if (ShowOutput.checked){
+    AdvanceMode += " " + ShowOutput.value;
+  }
+
+  if (OutputFile.checked){
+    AdvanceMode += " " + OutputFile.value;
+  }
+
+  document.getElementById("Hybrid-Attack").value = AdvanceMode;
+  outputElement.textContent = AdvanceMode;
+}
+
 //Function to switch the tabs within the website
 function openTab(evt, Tab) {
     //Declaring variables
@@ -68,7 +101,7 @@ function openTab(evt, Tab) {
     evt.currentTarget.className += " active";
   }
 
-  
+//ALL THE COPY FUNCTIONS  
   function copy_Command() {
     let text = document.getElementById('Straight-Attack').innerHTML;
     navigator.clipboard.writeText(text);
@@ -187,3 +220,16 @@ function HashesTable()
     placeholder.innerHTML = out;
   })
 }
+
+//Enable and Disable the Predefinition of Charset 
+function setDisable(){
+  var InputField = document.getElementById('CharsetValue');
+  if (CharsetOff.checked){
+    InputField.disabled = true;
+    InputField.value = "";
+  }
+  if (CharsetOn.checked){
+    InputField.disabled = false;
+  }
+}
+
