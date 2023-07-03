@@ -23,7 +23,7 @@ function update_command(){
   var wordlist = document.getElementById('Wordlist').value;
   const outputElement = document.getElementById('Straight-Attack');
   
-  outputElement.textContent = "hashcat -a 0 -m "+ hash_type + " " + file_input + " /usr/share/wordlists/" + wordlist + " --show";
+  outputElement.textContent = "hashcat -a 0 -m "+ hash_type + " " + file_input + " " + wordlist + " --show";
 }
 
 //The function to generate the command on Combinator Attack
@@ -34,7 +34,7 @@ function update_command2(){
   var CAwordlist2 = document.getElementById('CAWordlist2').value;
   const outputElement = document.getElementById('Combination-Attack');
   
-  outputElement.textContent = "hashcat -a 1 -m "+ hash_type + " " + file_input + " /usr/share/wordlists/" + CAwordlist + " /usr/share/wordlists/" + CAwordlist2 + " --show";
+  outputElement.textContent = "hashcat -a 1 -m "+ hash_type + " " + file_input + " " + CAwordlist + " " + CAwordlist2 + " --show";
 }
 
 //The function to generate the command on Brute Force Attack
